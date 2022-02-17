@@ -1,0 +1,9 @@
+.postimage-container{
+    height: 400px;
+    width: 100%;
+
+}
+.postimage-container img{
+    height: 100%;
+    width: 100%;
+}

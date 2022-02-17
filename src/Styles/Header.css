@@ -1,0 +1,87 @@
+.header-container{
+    padding:5px;
+    display:flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    box-shadow: 0 2px 5px rgb(160, 159, 159);
+    background-color: #ffffff;
+    margin-bottom: 10px;
+}
+.header-container.active{
+    background-color: rgb(24, 24, 24);
+    box-shadow: 0 2px 5px rgb(67, 65, 65);
+}
+.left-section{
+    display: flex;
+    align-items: center;
+}
+
+.search-icon{
+    position: relative;
+}
+.search-icon  input{
+    padding: 10px;
+    width: 250px;
+    border-radius: 20px;
+    outline: none;
+    border:none;
+    background-color: #F2F3F5;
+    color: rgb(22, 21, 21);
+   padding-left: 30px;
+   transition: 300ms ease;
+}
+.search-icon i {
+ position:  absolute;
+ bottom: 1px;
+ left: 2px;
+ transition: 300ms ease;
+}
+.fb-logo{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+.center-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+    
+}
+.center-section > div{
+    display: flex;
+    align-items: center;
+}
+.right-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 250px;
+}
+.right-section > div{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: rgb(225, 227, 228);
+    color: grey;
+}
+
+@media (max-width:1200px){
+        .search-icon input{
+            width: 30px;
+
+        }
+        .search-icon i{
+            left: 9px;
+        }
+        
+}
+@media (max-width:850px) {
+        .header-container{
+            padding: 10px;
+        }
+        .center-section{
+            width: 300px;
+        }
+}

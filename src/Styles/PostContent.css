@@ -1,0 +1,21 @@
+.postcontent-container{
+    width: 70%;
+    box-shadow:0 2px 5px grey;
+    height: auto;
+    padding: 10px;
+    margin-top:10px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    
+}
+.postcontent-container.active{
+    background-color: rgb(51, 48, 48);
+    color: rgb(250, 247, 247);
+
+}
+
+@media(max-width:800px){
+    .postcontent-container{
+        width: 90%;
+    }
+}

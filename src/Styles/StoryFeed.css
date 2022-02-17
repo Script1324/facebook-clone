@@ -1,0 +1,26 @@
+.storyfeed-container{
+    width: 70%;
+    align-items: center;
+    padding: 15px;
+    flex-wrap: nowrap;
+    overflow: auto;
+    display: flex ;
+}
+div.storyfeed-container::-webkit-scrollbar{
+    height: 5px;    
+    border-radius: 20px;
+}
+div.storyfeed-container::-webkit-scrollbar-track{
+    background-color: rgb(242, 242, 242);
+    }
+div.storyfeed-container::-webkit-scrollbar-thumb{
+    background-color: #4267B2;
+    border-radius: 20px;
+    width: 20px;   
+}
+
+@media(max-width:800px){
+    .storyfeed-container{
+        width: 90%;
+    }
+}

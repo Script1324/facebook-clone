@@ -1,0 +1,9 @@
+.App{
+    background-color: #F2F3F5;
+}
+.App.active{
+    background-color: rgb(24, 24, 24);
+}
+*{
+    transition: all 300ms ease;
+}

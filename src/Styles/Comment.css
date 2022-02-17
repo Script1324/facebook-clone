@@ -1,0 +1,21 @@
+.comment-container{
+    padding: 20px;
+}
+.comment-input{
+    display: flex;
+    align-items: center;
+}
+.comment-container form{
+    width: 100%;
+}
+.comment-input form input{
+    padding: 10px;
+    width: 100%;
+    margin-left: 10px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(232, 231, 231);
+    font-weight: bold;
+    border-radius: 20px;
+}

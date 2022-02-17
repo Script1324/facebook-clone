@@ -1,0 +1,18 @@
+ .readcomments-container{
+    display:flex;
+    padding:10px;
+  }
+  .comments-holder{
+    width:auto;
+    background-color:rgb(232, 231, 231);
+    max-width:90%;
+    height:auto;
+    padding:10px;
+    margin-left:5px;
+    border-radius:50px;
+    color: rgb(75, 74, 74);
+  }
+  .comments-holder:hover{
+      background-color: grey;
+      color: white;
+  }

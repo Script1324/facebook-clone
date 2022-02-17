@@ -1,0 +1,17 @@
+.newsfeed-container{
+    flex: .6;
+    background-color: #F2F3F5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+.newsfeed-container.active{
+    background-color: rgb(24, 24, 24);
+}
+@media(max-width:800px){
+    .newsfeed-container{
+        margin: 0 auto;
+        flex: .9;
+    }
+}

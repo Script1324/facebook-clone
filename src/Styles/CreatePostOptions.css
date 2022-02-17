@@ -1,0 +1,8 @@
+.createpostoptions-container{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.createpostoptions-container i{
+    margin-right: 5px;
+}

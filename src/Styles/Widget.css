@@ -1,0 +1,20 @@
+.widget-container{
+    flex: .2;
+    height: auto;
+    margin-bottom: 10px;
+    padding:10px;
+    
+}
+.widget-container.active{
+    background-color: rgb(24, 24, 24);
+}
+@media(max-width:1000px){
+    .widget-container{
+        flex: .4;
+    }
+}
+@media(max-width:800px){
+    .widget-container{
+        display: none;
+    }
+}
