@@ -19,7 +19,7 @@ import { UseProvider } from './StateProvider/StateProvider';
 
 function Header() {
 
-        const{toggleDarkMode,darkmode} = UseProvider()
+        const{toggleDarkMode,darkmode,logOut} = UseProvider()
 
   return <div className={darkmode ? 'header-container active': 'header-container' } >
             <section className='left-section'>
@@ -48,7 +48,7 @@ function Header() {
                     <div>{darkmode ?  <LightModeOutlinedIcon onClick={toggleDarkMode}/> :  <DarkModeOutlinedIcon onClick={toggleDarkMode}/>}</div>
                     <div><MapsUgcOutlinedIcon/></div>
                     <div><NotificationsNoneOutlinedIcon/></div>
-                    <div><KeyboardArrowDownOutlinedIcon/></div>
+                    <div><KeyboardArrowDownOutlinedIcon onClick={logOut}/></div>
             </section>
   </div>;
 }

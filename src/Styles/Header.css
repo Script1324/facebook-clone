@@ -82,6 +82,6 @@
             padding: 10px;
         }
         .center-section{
-            width: 300px;
+            display: none;
         }
 }

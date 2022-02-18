@@ -3,7 +3,7 @@ import React from 'react'
 import { UseProvider } from '../StateProvider/StateProvider';
 
 
-function LikeStatus() {
+function LikeStatus({like}) {
     const style = {
         padding:"10px",
         color:"	#4267B2",
@@ -12,13 +12,14 @@ function LikeStatus() {
         alignItems:"center"
     }
 
-    const {like} = UseProvider()
-
+  
   return (
             <>
                     
-          {like == 0 ?  null : <div className='likestatus-container' style={style}>
-          {like} <p>Like</p></div>}
+        <div className='likestatus-container' style={style}>
+          {like} <p style={{marginLeft:"2px"}}>Like</p>
+          
+          </div>
     
             </>   
   )

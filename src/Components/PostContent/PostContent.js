@@ -16,8 +16,8 @@ const {darkmode} =UseProvider()
         <Header data_Id={data.id}/>
         <Caption caption={data.post}/>
         <PostImage image={data.image}/>
-        <LikeStatus/>
-        <PostOptions />
+        <LikeStatus like={data.like}/>
+        <PostOptions id={data.id}/>
         <Comment id={data.id} comments={data.comment} />
     </div>
   )

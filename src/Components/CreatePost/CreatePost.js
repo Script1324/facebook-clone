@@ -20,7 +20,8 @@ function CreatePost() {
     
     const newPost = {
           image:"",
-          post:val
+          post:val,
+          like:0
         }
 
     addData(newPost)

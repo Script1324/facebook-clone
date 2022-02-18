@@ -19,6 +19,12 @@ div.storyfeed-container::-webkit-scrollbar-thumb{
     width: 20px;   
 }
 
+@media (max-width:950px) {
+    .storyfeed-container{
+         width: 90%;
+        
+    }
+}
 @media(max-width:800px){
     .storyfeed-container{
         width: 90%;

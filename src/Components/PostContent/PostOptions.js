@@ -3,19 +3,15 @@ import "../../Styles/PostOptions.css"
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 import ModeCommentOutlinedIcon from '@mui/icons-material/ModeCommentOutlined';
 import ScreenShareOutlinedIcon from '@mui/icons-material/ScreenShareOutlined';
-import { UseProvider } from '../StateProvider/StateProvider';
+import {UseProvider} from "../StateProvider/StateProvider"
 
-function PostOptions({icon,text}) {
+function PostOptions({id}) {
 
-    const{like,setLike} = UseProvider()
-
-    const likePost= () =>{
-      setLike(1)
-    }
+  const {likePost} = UseProvider()
 
   return (
     <div className='postoptions-container'>
-        <div onClick={likePost}>
+        <div onClick={()=> likePost(id)}>
         <ThumbUpOutlinedIcon/> <p>Like</p>
         </div>
         <div>

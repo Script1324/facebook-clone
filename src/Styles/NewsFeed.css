@@ -9,9 +9,15 @@
 .newsfeed-container.active{
     background-color: rgb(24, 24, 24);
 }
+
+@media (max-width:950px) {
+    .newsfeed-container{
+         display: .8;
+    }
+}
 @media(max-width:800px){
     .newsfeed-container{
         margin: 0 auto;
-        flex: .9;
+        flex: 1;
     }
 }

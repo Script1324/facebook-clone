@@ -41,6 +41,12 @@ hr{
     justify-content: space-around;
 }
 
+@media (max-width:950px) {
+    .createpost-container{
+       width:90%;
+    }
+}
+
 @media(max-width:800px){
     .createpost-container{
         width: 90%;

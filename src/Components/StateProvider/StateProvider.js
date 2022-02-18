@@ -35,6 +35,14 @@ export const StateProvider = ({children}) =>{
              })
         }
 
+
+        //this is for the log out
+            const logOut = ()=> {
+                dispatch({
+                    type:"LOG_OUT"
+                })
+            }
+
         //get the document data 
         const getData = () =>{
 
@@ -74,9 +82,7 @@ export const StateProvider = ({children}) =>{
 
         }
 
-        //likePost
-        const[like,setLike] = useState(0)
-    
+      
 
         //darkmode
         const[darkmode,setDarkmode]= useState(false);
@@ -94,12 +100,22 @@ export const StateProvider = ({children}) =>{
                  await  setDoc(specificDoc,{comment:[...comments,value]},{merge:true}) 
            
                  SetComments([...comments,value])
-        
 
         }
 
+        //like
+        const likePost = (id) =>{
+                postDispatch({
+                    type:"LIKE_POST",
+                    payload:id
+                })
+            }
 
-        return <GlobalState.Provider value={{user,SignIn,getData,postData,addData,deleteData,like,setLike,darkmode,toggleDarkMode,addComment}}>
+
+        console.log(postData)
+
+
+        return <GlobalState.Provider value={{user,SignIn,logOut,getData,postData,addData,deleteData,darkmode,toggleDarkMode,addComment,likePost}}>
                      {children}
              </GlobalState.Provider>
 
