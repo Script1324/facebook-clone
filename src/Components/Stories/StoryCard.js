@@ -1,17 +1,17 @@
 import React from 'react'
 import "../../Styles/StoryCard.css"
 
-function StoryCard({image,icon,name}) {
+function StoryCard({name,icon,image}) {
   return (
     <div className='storycard-container'>
             <div className='story-image'>
-                    <img src='https://imgix.ranker.com/user_node_img/50081/1001612045/original/reality-photo-u2?auto=format&q=60&fit=crop&fm=pjpg&dpr=2&w=375' alt='story image'/>
-            </div>
+                <img src={image} alt="iamge"/>       
+             </div>
              <div className='story-avatar'>
-                 <img src='https://imgix.ranker.com/user_node_img/50081/1001612045/original/reality-photo-u2?auto=format&q=60&fit=crop&fm=pjpg&dpr=2&w=375' alt='story image icon   '/>
+                <img src={icon} alt="icon"/>
             </div>
             <div className='story-name'>
-                        <p>Warren Gaytero</p>
+                        <p>{name}</p>
             </div>
     </div>
   )

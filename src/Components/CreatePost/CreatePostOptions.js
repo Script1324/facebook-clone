@@ -6,6 +6,7 @@ function CreatePostOptions({icon,text}) {
   return (
     <div className='createpostoptions-container'>
         <i> {icon} </i> <p>{text}</p>
+       
     </div>
   )
 }
