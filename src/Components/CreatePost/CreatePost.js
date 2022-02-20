@@ -6,10 +6,15 @@ import InsertPhotoOutlinedIcon from '@mui/icons-material/InsertPhotoOutlined';
 import EmojiEmotionsOutlinedIcon from '@mui/icons-material/EmojiEmotionsOutlined';
 import { UseProvider } from '../StateProvider/StateProvider';
 import {Avatar} from "@mui/material"
+import {serverTimestamp} from "firebase/firestore"
+
+import Modal from './Modal';
+import ReactDOM from 'react-dom';
+
 
 function CreatePost() {
 
-  const {user,addData} = UseProvider()
+  const {user,addData,modalVal,setmodalVal,toggleModal,modal} = UseProvider()
 
   const [val,setValue] = useState("")
 
@@ -19,18 +24,20 @@ function CreatePost() {
     e.preventDefault();
     
     const newPost = {
-          image:"",
+          image:modalVal,
           post:val,
-          like:0
+          like:0,
+          time:serverTimestamp()
         }
 
     addData(newPost)
 
       setValue("")
+      setmodalVal("")
   }
 
   return (
-    <div className='createpost-container'>
+    <>    <div className='createpost-container'>
 
            <div> 
        <div className='createpost-user-icon'>
@@ -51,11 +58,18 @@ function CreatePost() {
 
         <div className='createpost-options-container'>
             <CreatePostOptions icon={<OndemandVideoIcon style={{color:"tomato"}}/>} text={"Live Video"}/>
-            <CreatePostOptions icon={<InsertPhotoOutlinedIcon style={{color:"green"}}/>} text={"Photo/Video"}/>
+          <div onClick={toggleModal}>  <CreatePostOptions icon={<InsertPhotoOutlinedIcon style={{color:"green"}}/>} text={"Photo/Video"}/> </div>
             <CreatePostOptions icon={<EmojiEmotionsOutlinedIcon style={{color:"gold"}}/>} text={"Feeling/Activity"}/>
         </div>
             
     </div>
+
+    {ReactDOM.createPortal(
+         modal ? <Modal/> : null ,document.querySelector('#modal')
+      )}
+
+
+    </>
   )
 }
 

@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useReducer,useState } from "react
 import { SignInUser } from "../Firebase/FirebaseConfig";
 import { UserReducer } from "../Reducer/UserReducer";
 import { PostDataReducer } from "../Reducer/PostDataReducer";
-import { getDocs,addDoc, onSnapshot, doc, deleteDoc, setDoc } from "firebase/firestore";
+import { getDocs,addDoc, onSnapshot, doc, deleteDoc, setDoc,query,orderBy } from "firebase/firestore";
 import { db,collectionReference } from "../Firebase/FirebaseConfig";
 import { DockSharp } from "@mui/icons-material";
 import { getAccordionDetailsUtilityClass } from "@mui/material";
@@ -43,10 +43,14 @@ export const StateProvider = ({children}) =>{
                 })
             }
 
+
+            //for time stamp
+         const q = query(collectionReference,orderBy('time','desc'))   
+
         //get the document data 
         const getData = () =>{
 
-            onSnapshot(collectionReference,(snapshot)=>{
+            onSnapshot(q,(snapshot)=>{
                 const snap =  snapshot.docs.map((doc)=>{
                         return {...doc.data(),id:doc.id}
                     })
@@ -71,6 +75,7 @@ export const StateProvider = ({children}) =>{
                 const data = await addDoc(collectionReference,{
                     ...post
                 })
+                 alert('succesfully posted')
         }
 
         //delete the data
@@ -78,7 +83,7 @@ export const StateProvider = ({children}) =>{
               
              const data =  doc(collectionReference,id)
              await deleteDoc(data)
-             console.log('succesfully deleted')
+            alert("succesfully deleted")
 
         }
 
@@ -111,11 +116,16 @@ export const StateProvider = ({children}) =>{
                 })
             }
 
+        //image link
+        const[modalVal,setmodalVal] = useState("")
 
-        console.log(postData)
+        //toggleModal
+        const[modal,setModal] = useState(false)
+        
+        //toggleModal
+        const toggleModal = () => setModal(!modal)
 
-
-        return <GlobalState.Provider value={{user,SignIn,logOut,getData,postData,addData,deleteData,darkmode,toggleDarkMode,addComment,likePost}}>
+        return <GlobalState.Provider value={{user,SignIn,logOut,getData,postData,addData,deleteData,darkmode,toggleDarkMode,addComment,likePost,modalVal,setmodalVal,toggleModal,modal}}>
                      {children}
              </GlobalState.Provider>
 

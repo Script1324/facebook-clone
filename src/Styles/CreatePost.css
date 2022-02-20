@@ -8,6 +8,7 @@
      border-radius: 5px;
      display: flex;
      flex-direction: column;
+     overflow: auto;
 }
 .createpost-container :nth-child(1){
     display: flex;

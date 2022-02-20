@@ -5,12 +5,14 @@ import ModeCommentOutlinedIcon from '@mui/icons-material/ModeCommentOutlined';
 import ScreenShareOutlinedIcon from '@mui/icons-material/ScreenShareOutlined';
 import {UseProvider} from "../StateProvider/StateProvider"
 
+
 function PostOptions({id}) {
 
   const {likePost} = UseProvider()
 
   return (
-    <div className='postoptions-container'>
+    <>
+      <div className='postoptions-container'>
         <div onClick={()=> likePost(id)}>
         <ThumbUpOutlinedIcon/> <p>Like</p>
         </div>
@@ -22,6 +24,9 @@ function PostOptions({id}) {
         </div>
      
     </div>
+
+    
+    </>
   )
 }
 
