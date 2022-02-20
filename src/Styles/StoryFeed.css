@@ -30,3 +30,9 @@ div.storyfeed-container::-webkit-scrollbar-thumb{
         width: 90%;
     }
 }
+@media(max-width:600px){
+    .storyfeed-container{
+        width: 100%;
+    }
+}
+

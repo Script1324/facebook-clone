@@ -53,3 +53,9 @@ hr{
         width: 90%;
     }
 }
+
+@media(max-width:600px){
+    .createpost-container{
+        width: 100%;
+    }
+}
